@@ -1,0 +1,10 @@
+.THIS .advancedSearch {
+	border-top: 2px solid rgb(244, 246, 249);
+}
+.THIS .slds-input[disabled] {
+    opacity: 1 !important;    
+}
+.THIS .label-no-wrap{
+  	white-space: nowrap;
+  	overflow: hidden;
+}

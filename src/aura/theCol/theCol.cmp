@@ -1,0 +1,19 @@
+<!--
+/*
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<aura:component access="global">
+    <aura:attribute name="account" type="Object" access="global"/>
+    <aura:attribute name="field" type="String" access="global"/>
+    <aura:attribute name="result" type="String" access="global"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <td role="gridcell" class="phoneCol slds-show_small" data-label="{!v.result}">
+        <div class="slds-truncate">{!v.result}</div>
+    </td>
+    
+</aura:component>

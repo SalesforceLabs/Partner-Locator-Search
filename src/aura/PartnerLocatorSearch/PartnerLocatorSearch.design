@@ -1,0 +1,20 @@
+<design:component label="Partner Locator Search">
+	<design:attribute name="searchFields" label="Search Fields" description="Add the API names of the fields to include in the search. (e.g. Custom_field__c)" />
+    <design:attribute name="distanceType" label="Distance Measurement" description="Choose whether to calcualte distance in miles or kilometers" datasource="km,mi" default="km" />
+    <design:attribute name="showType" label="Include Type" description="Show or hide the Type criteria" />
+    <design:attribute name="showIndustry" label="Include Industry" description="Show or hide the Industry criteria" />
+    <design:attribute name="showRating" label="Include Rating" description="Show or hide the Rating criteria" />
+    <design:attribute name="showLocation" label="Include Distance" description="Show or hide the Distance criteria" />
+    <design:attribute name="showPartner" label="Include Partner" description="Show or hide the Partner criteria" />
+    
+    <design:attribute name="searchKeyLabel" label="Search Field Label" description="Label for the Search field or keyword" />
+    <design:attribute name="distanceLabel" label="Distance Label" description="Label for the Distance field" />
+    <design:attribute name="locationLabel" label="Location Label" description="Label for the Location field" />
+    <design:attribute name="partnerLabel" label="Partner Only Label" description="Label for the Partner only field" />
+	
+    <design:attribute name="findLabel" label="Search Button Label" default="Find Partners" description="Label for search button" />
+    <design:attribute name="horizontalAlign" label="Search Column Alignment (SLDS)" default="space" description="Spacing of the columns in the search bar, taken from the Lightning Design System." datasource="center, space, spread, end" />   
+    <design:attribute name="colFlexibilty" label="Search Column Flexibility (SLDS)" default="auto" description="Flexibility and auto width of columns in the search bar, taken from the Lightning Design System." datasource="auto, shrink, grow" /> 
+
+    <design:attribute name="theRT" label="Account Record Type" description="The RecordType of the accounts you want to search on." datasource="apex://AccountRecordTypes" />
+</design:component>

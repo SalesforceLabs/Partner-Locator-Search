@@ -1,0 +1,18 @@
+.THIS, .THIS .slds-picklist__label{
+    width: 100%;
+}
+.THIS.slds-picklist[disabled], .THIS.slds-picklist[disabled] button, .THIS.slds-picklist[disabled] button span, .THIS.slds-picklist[disabled] button:focus{
+    background-color: #e0e5ee;
+    border-color: #a8b7c7;
+    cursor: not-allowed;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    box-shadow: none;
+    color: #656565;
+}
+.THIS .slds-button{
+    font-size: .8125rem;
+}

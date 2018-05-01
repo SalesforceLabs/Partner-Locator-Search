@@ -1,0 +1,47 @@
+.THIS .mapSize{
+    border-radius: 4px;
+    height: 300px;
+    width: 100%;
+}
+.THIS .map_wrapper {
+   /* margin: .75rem; */
+   position: relative;
+}
+.THIS .preview-block{
+    position: relative;
+    background: #EDEDED;
+    height: 300px;
+    width: 100%;
+}
+.THIS .innerContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.THIS .halfHeight{
+    align-self: center;
+    width: 100%;
+    height: 68px;
+}
+.THIS .preview-block .largeWidthHeight{
+    display: block;
+    text-align: center;
+    margin-top: 0;
+    color: white;
+    color: #059DD3;
+    right: auto !important;
+    font-size: 32px;
+    left: auto !important;
+    font-family: "Salesforce Sans", Arial, sans-serif;
+}
+.THIS .preview-block .infoText{
+    display: block;
+    text-align: center;
+    margin-top: 0;
+    color: #059DD3;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    font-family: "Salesforce Sans", Arial, sans-serif;
+}

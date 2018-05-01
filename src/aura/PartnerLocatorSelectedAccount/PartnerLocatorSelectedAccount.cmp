@@ -1,0 +1,107 @@
+<!--
+/*
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<aura:component access="global">
+    
+    <aura:attribute name="theAccount" type="Object" access="global" />
+	<aura:attribute name="theAddress" type="String" access="global" />
+    <aura:attribute name="theLat" type="String" access="global" />
+    <aura:attribute name="theLong" type="String" access="global" />
+    <aura:attribute name="mapWidth" type="String" access="global" />
+    
+    <aura:handler name="change" value="{!v.theAccount}" action="{!c.sanitizeUrl}" />
+    <aura:handler name="init" value="this" action="{!c.sanitizeUrl}" />
+    
+    <div class="account_wrap" aura:id="account_wrap">
+    	
+        <lightning:tile label="{!v.theAccount.Name}" href="{!$SfdcSite.pathPrefix + '/' + v.theAccount.Id}" class="account_title">
+            <aura:set attribute="media" >
+                <lightning:icon size="small" iconName="standard:contact"/>
+            </aura:set>
+            
+            <div class="acc-desc my-divider"> {!v.theAccount.Description} </div>
+            
+            <dl class="slds-dl--horizontal">
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="Address"> <lightning:icon iconName="utility:checkin" size="small" /> </p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="Address"> {!v.theAccount.BillingStreet} <br/> {!v.theAccount.BillingCity} <br/> {!v.theAccount.BillingCountry} </p>
+                </dd>
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="Contact"> <lightning:icon iconName="utility:identity" size="small" /> </p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="Contact">{!v.theAccount.Phone} <br/> {!v.theAccount.Fax}</p>
+                </dd>
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="Website"> <lightning:icon iconName="utility:world" size="small" />  </p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="{!v.theAccount.Website}">{!v.theAccount.Website}</p>
+                </dd>
+                
+            </dl>
+            <div class="my-divider"></div>
+            <dl class="slds-dl--horizontal">
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="Partner">Partner:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="{!v.theAccount.IsPartner}"> <ui:outputCheckbox value="{!v.theAccount.IsPartner}"/>  </p>
+                </dd>
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="Industry">Industry:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="{!v.theAccount.Industry}">{!v.theAccount.Industry}</p>
+                </dd>
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="NumberOfEmployees">Number Of Employees:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="{!v.theAccount.NumberOfEmployees}">{!v.theAccount.NumberOfEmployees}</p>
+                </dd>
+
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="Type">Type:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="{!v.theAccount.Type}">{!v.theAccount.Type}</p>
+                </dd>
+                <dt class="slds-dl--horizontal__label">
+                    <p class="slds-truncate" title="Type">Rating:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="{!v.theAccount.Rating}">{!v.theAccount.Rating}</p>
+                </dd>
+                
+            </dl> 
+
+			<div class="my-divider"></div>
+            
+            <div class="static_map_wrap" aura:id="static_map_wrap" id="static_map_wrap">
+                <aura:if isTrue="{!and(v.theLat != null, v.theLong != null)}">
+                	<img src="{!'https://maps.googleapis.com/maps/api/staticmap?center='+v.theLat+','+v.theLong+'&amp;zoom=13&amp;size=400x200&amp;markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C'+v.theLat+','+v.theLong+'&amp;key=AIzaSyDM53qPb3RPJzg9ZjvB_0gYS8Bdw9F6QPE'}" />
+                	<aura:set attribute="else">
+                    	<img src="{!'https://maps.googleapis.com/maps/api/staticmap?center='+v.theAddress+'&amp;zoom=13&amp;size=400x200&amp;markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C'+v.theAddress+'&amp;key=AIzaSyDM53qPb3RPJzg9ZjvB_0gYS8Bdw9F6QPE'}" />
+                    </aura:set>
+                </aura:if>
+                 
+            </div>
+            
+            <div class="goto-account"> 
+                <lightning:button variant="brand" label="Go to Account" onclick="{! c.goToAccount }" />
+            </div>
+            
+        </lightning:tile>
+        
+    
+    </div>
+    
+</aura:component>

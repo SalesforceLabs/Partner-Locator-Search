@@ -1,0 +1,20 @@
+<!--
+/*
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<aura:component access="global">
+    <aura:attribute access="global" name="referenceRecordId" type="Id" required="true"
+                    description="Id of the reference record"/>
+    <aura:attribute access="global" name="referenceRecordName" type="String" required="true"
+                    description="Name of the reference record"/>
+    <aura:attribute access="global" name="class" type="String" required="false"
+                    description="CSS style class for the field"/>
+
+    <div class="{!v.class}"> 
+        <a data-record="{!v.referenceRecordId}" href="" onclick="{!c.navigateToReferenceRecord}">{!v.referenceRecordName}</a>
+    </div>
+</aura:component>

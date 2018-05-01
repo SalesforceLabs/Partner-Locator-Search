@@ -1,0 +1,22 @@
+<!--
+/*
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="mapProvider" type="String" default="Leaflet" access="global" />
+    <aura:attribute name="height" type="Integer" default="600" access="global"/>
+    <aura:attribute name="width" type="String" default="100%" access="global"/>
+    
+    <aura:if isTrue="{!v.mapProvider == 'Leaflet'}"> 
+        <c:LeafletMap width="{!v.width}" height="{!v.height}" />
+    </aura:if>
+    
+    <aura:if isTrue="{!v.mapProvider == 'Google'}"> 
+        <c:GoogleMap width="{!v.width}" height="{!v.height}" />
+    </aura:if>
+    
+</aura:component>

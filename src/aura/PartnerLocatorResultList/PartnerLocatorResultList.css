@@ -1,0 +1,122 @@
+.THIS.ploc_slds-card {
+    position: relative;
+    padding: 0;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    background-clip: padding-box;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.10);
+}
+
+.THIS.results_wrap {
+    /* padding: .75rem; */
+    position: relative;
+}
+
+
+.THIS .imgHolder{
+	max-height: 50px;
+}
+.THIS .imageCol{
+    width: 50px;
+}
+.THIS .nameCol{
+    
+}
+.THIS .industryCol{
+    
+}
+.THIS .addressCol{
+    
+}
+
+.THIS .num-results {
+    margin-left: .75rem;
+    font-size: 1rem;
+    line-height: 32px;
+}
+
+.THIS .nav_buttons {
+    margin-top: 1rem;
+}
+
+.THIS .result-bottom {
+    text-align: right;
+}
+
+.THIS .isPartner {
+    background-color: #f2cf5b;
+}
+
+.THIS .pl-table-heading th {
+    padding: .25rem .5rem;
+}
+
+.THIS .selected-output-fields {
+    position: relative;
+}
+
+.THIS .acc-icon img {
+    max-height: 56px; 
+}
+.THIS .acc-card-body {
+    padding: 0 .75rem;
+ 
+}
+
+.THIS .result-card .slds-text-heading--small {
+    font-size: .9rem;  
+}
+
+.THIS .selected-map {
+    
+}
+
+.THIS .sortOption{
+    /* max-width: 300px; */
+}
+
+.THIS .forcePlaceholder .slds-grid {
+    background-color: rgb(244, 246, 249);    
+}
+
+.THIS .sort-wrap {
+    text-align: right;
+}
+.THIS .sort-select label {
+    display: none;
+}
+
+.THIS .table-icon {
+    background-color: #00A4AA;
+}
+
+.THIS .page-nums {
+	padding: .25rem;
+}
+.THIS .emptyContent{
+    height: 200px;
+}
+.THIS .emptyContentInner {
+    margin-top: 2rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    right: 0;
+}
+.THIS .place-holder-body .place-holder-head th{
+    border-bottom: 1px solid #d4d4d4;
+}
