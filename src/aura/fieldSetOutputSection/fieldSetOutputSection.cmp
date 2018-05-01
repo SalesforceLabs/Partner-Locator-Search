@@ -1,0 +1,34 @@
+<!--
+/*
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<aura:component implements="force:hasRecordId"
+                access="global" controller="FieldSetSectionController">
+
+    <aura:attribute access="global" name="fieldSetName" type="String" required="false"
+                    description="API Name of the Field Set to be displayed in the section"/>
+    <aura:attribute access="global" name="sectionTitle" type="String" required="false"
+                    description="User defined title for the section"/>
+    <aura:attribute access="global" name="sectionType" type="String" required="false" default="Card"
+                    description="Determines how the section is to be displayed - Card (like a related list) or Layout (like a page layout section)"/>
+    <aura:attribute access="global" name="sectionIcon" type="String" required="false"
+                    description="Icon to be displayed if the section is displayed as a Card"/>
+    <aura:attribute access="global" name="collapsible" type="Boolean" required="false" default="false"
+                    description="Whether the section is collapsible or not"/>
+    <aura:attribute access="global" name="columnsPerRow" type="String" required="false" default="2"
+                    description="Determines how many columns to displayed in one row"/>
+    
+    <aura:attribute name="recordId" type="String" access="global"/>
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.doInit}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/> -->
+    
+    <lightning:spinner aura:id="spinner" variant="brand" size="medium" class="slds-hide" />
+    {!v.body}
+
+</aura:component>

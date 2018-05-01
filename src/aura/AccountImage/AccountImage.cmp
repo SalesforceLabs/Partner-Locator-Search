@@ -1,0 +1,27 @@
+<!--
+/*
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<aura:component controller="PartnerLocatorCtrl" >
+
+    <aura:attribute name="accountId" type="String" />
+    <aura:attribute name="attachment" type="Object" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div>
+        <aura:if isTrue="{!v.attachment.Id != null}" >
+            <img src="{!$SfdcSite.pathPrefix + '/sfc/servlet.shepherd/version/download/' + v.attachment.ContentDocument.LatestPublishedVersionId }" />
+            <aura:set attribute="else">
+            	<lightning:icon iconName="standard:account" size="medium" alternativeText="Account Icon"/>
+            </aura:set>
+        </aura:if>
+        
+        
+    </div>
+
+</aura:component>

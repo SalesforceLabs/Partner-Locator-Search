@@ -1,0 +1,10 @@
+<design:component label="Partner Locator Results">
+    <design:attribute label="Header Icon" name="resultListIcon" description="SLDS Icon for the the results container" default="custom:custom96" />
+	<design:attribute label="Number of search results per page" name="pageSize" min="1" max="100" description="Number of results to display per page - also controls number of markers on map" default="10" />
+    <design:attribute label="Display Results As" name="displayResultsAs" description="Show search results as a list in a table or as Cards" datasource="List,Cards" default="List" />
+    <design:attribute label="List: Fields to display" name="searchFields" description="Add the API names, in a comma seperated list, of the fields to include in the result table. (e.g. Custom_field__c)" default="Industry,NumberOfEmployees"/>    
+    <design:attribute label="Cards: Card Column Width" name="cardColSize" description="Column width of result card - inherited from SLDS." datasource="3,4,6,12" default="4" />
+    <design:attribute label="Field Set Name" name="accountFieldSetName" description="The Account Field Set to display fields in popup modal" datasource="apex://FieldSetPicklistDesign" />
+    <design:attribute label="Number of Columns in Popup" description="Number of columns in layout for selected account details in modal." name="columnsPerRow" datasource="1,2,3" default="2" />
+    <design:attribute label="Open Result In New Tab" description="Determines whether a result is open in a new browser tab. Checked = Opens in New, Unchecked = Opens in Current" name="openResultInNewTab" default="true" />  
+</design:component>
