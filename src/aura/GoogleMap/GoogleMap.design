@@ -1,4 +1,5 @@
 <design:component label="Partner Locator Google Map">
-	<design:attribute name="height" default="600" label="Map Height" description="Please specify the height of the map in px"/>
-    <design:attribute name="width" default="100%" label="Map Width" description="Please specify the width of the map in % or px"/>
+    <design:attribute name="height" default="600" label="Map Height" description="Please specify the height of the map in px" />
+    <design:attribute name="width" default="100%" label="Map Width" description="Please specify the width of the map in % or px" />
+    <design:attribute name="apiKey" default="" label="Api Key" description="Please specify your Google Maps Api Key" />
 </design:component>
